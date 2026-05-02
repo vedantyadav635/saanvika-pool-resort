@@ -28,7 +28,7 @@ const amenities = [
   {
     number: "03",
     title: "Two Rooms",
-    text: "Two simple rooms are available for families or small groups who need extra comfort."
+    text: "Rooms are available for families or small groups who need extra comfort."
   }
 ];
 
