@@ -948,9 +948,11 @@ select:focus {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: #123532;
     padding-top: 132px;
+    padding-bottom: max(28px, env(safe-area-inset-bottom, 0px));
   }
 
   .hero-media {
@@ -1043,7 +1045,7 @@ select:focus {
   .hero {
     padding-top: 112px;
     padding-right: 18px;
-    padding-bottom: 22px;
+    padding-bottom: max(22px, env(safe-area-inset-bottom, 0px));
     padding-left: 18px;
   }
 
