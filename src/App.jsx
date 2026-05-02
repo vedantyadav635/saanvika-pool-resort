@@ -149,7 +149,7 @@ function Hero() {
       <div className="hero-content">
         <h1>Saanvika Pool and Resort</h1>
         <p className="hero-copy">
-          A bright, modern pool for family dips, weekend plans, day visits, and two-room stays for
+          A bright, modern pool for family dips, weekend plans, day visits, and room stays for
           small groups.
         </p>
         <div className="hero-actions">
@@ -184,7 +184,7 @@ function About() {
         <div className="body-copy">
           <p>
             Saanvika Pool and Resort is mainly a clean swimming pool with comfortable seating,
-            shaded corners, and two rooms for guests who need a little extra space.
+            shaded corners, and rooms for guests who need a little extra space.
           </p>
           <p>
             Come for a quick swim, bring the family for a sunny afternoon, or ask about room
