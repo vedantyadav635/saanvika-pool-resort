@@ -121,7 +121,7 @@ function Header() {
         className="menu-toggle"
         type="button"
         aria-expanded={isMenuOpen}
-        aria-controls="site-nav"
+        aria-controls="header-nav-shell"
         aria-label="Toggle navigation menu"
         onClick={() => setIsMenuOpen((open) => !open)}
       >
@@ -130,13 +130,21 @@ function Header() {
         <span />
       </button>
 
-      <nav id="site-nav" className={isMenuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary">
-        {navItems.map((item) => (
-          <a key={item.href} href={item.href} onClick={closeMenu}>
-            {item.label}
-          </a>
-        ))}
-      </nav>
+      <div
+        id="header-nav-shell"
+        className={isMenuOpen ? "header-nav-shell is-open" : "header-nav-shell"}
+      >
+        <nav className="site-nav" aria-label="Primary">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} onClick={closeMenu}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a className="nav-cta" href="#booking" onClick={closeMenu}>
+          Book a Visit
+        </a>
+      </div>
     </header>
   );
 }
