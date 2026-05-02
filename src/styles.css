@@ -951,7 +951,7 @@ select:focus {
     min-height: 100vh;
     min-height: 100dvh;
     background: #123532;
-    padding-top: 132px;
+    padding-top: 118px;
     padding-bottom: max(28px, env(safe-area-inset-bottom, 0px));
   }
 
@@ -961,6 +961,7 @@ select:focus {
 
   .hero h1 {
     font-size: clamp(2.55rem, 12vw, 4.5rem);
+    transform: translateY(-10px);
   }
 
   .quick-panel,
@@ -1043,7 +1044,7 @@ select:focus {
   }
 
   .hero {
-    padding-top: 112px;
+    padding-top: 96px;
     padding-right: 18px;
     padding-bottom: max(22px, env(safe-area-inset-bottom, 0px));
     padding-left: 18px;
@@ -1053,6 +1054,7 @@ select:focus {
     max-width: 11ch;
     font-size: clamp(2.55rem, 11.6vw, 3.7rem);
     line-height: 1;
+    transform: translateY(-14px);
   }
 
   .hero-copy {
