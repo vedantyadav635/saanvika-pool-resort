@@ -104,6 +104,19 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 820px)");
+    function syncBodyScroll() {
+      document.body.style.overflow = mq.matches && isMenuOpen ? "hidden" : "";
+    }
+    syncBodyScroll();
+    mq.addEventListener("change", syncBodyScroll);
+    return () => {
+      mq.removeEventListener("change", syncBodyScroll);
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   function closeMenu() {
     setIsMenuOpen(false);
   }
@@ -113,27 +126,41 @@ function Header() {
       className={isHeaderHidden && !isMenuOpen ? "site-header header-hidden" : "site-header"}
       aria-label="Main navigation"
     >
+      <button
+        type="button"
+        className={isMenuOpen ? "menu-backdrop is-open" : "menu-backdrop"}
+        aria-label="Close menu"
+        aria-hidden={!isMenuOpen}
+        tabIndex={isMenuOpen ? 0 : -1}
+        onClick={closeMenu}
+      />
+
       <a className="brand" href="#home" aria-label="Saanvika Pool and Resort home" onClick={closeMenu}>
         <img className="brand-logo" src={logoImage} alt="" />
       </a>
 
       <button
-        className="menu-toggle"
+        className={isMenuOpen ? "menu-toggle is-open" : "menu-toggle"}
         type="button"
         aria-expanded={isMenuOpen}
         aria-controls="header-nav-shell"
-        aria-label="Toggle navigation menu"
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         onClick={() => setIsMenuOpen((open) => !open)}
       >
-        <span />
-        <span />
-        <span />
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
       </button>
 
       <div
         id="header-nav-shell"
         className={isMenuOpen ? "header-nav-shell is-open" : "header-nav-shell"}
       >
+        <div className="drawer-head">
+          <button type="button" className="drawer-close" aria-label="Close menu" onClick={closeMenu}>
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
         <nav className="site-nav" aria-label="Primary">
           {navItems.map((item) => (
             <a key={item.href} href={item.href} onClick={closeMenu}>
